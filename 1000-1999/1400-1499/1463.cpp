@@ -25,18 +25,20 @@ int main() {
 
 		if (visited[cur.first - 1] != 1) {
 			visited[cur.first - 1] = 1;
-			st.push({ cur.first - 1, cur.second + 1 });
+			st.push({ cur.first - 1 , cur.second + 1 });
 		}
+
 		if (cur.first % 2 == 0) {
 			if (visited[cur.first / 2] != 1) {
 				visited[cur.first / 2] = 1;
 				st.push({ cur.first / 2, cur.second + 1 });
 			}
 		}
+
 		if (cur.first % 3 == 0) {
 			if (visited[cur.first / 3] != 1) {
 				visited[cur.first / 3] = 1;
-				st.push({ cur.first / 3, cur.second + 1});
+				st.push({ cur.first / 3, cur.second + 1 });
 			}
 		}
 	}
