@@ -3,51 +3,40 @@
 #define MIN(a, b)	a<b ? a:b
 using namespace std;
 
+struct cmp {
+	bool operator()(int a, int b) {
+		if (abs(a) == abs(b)) {
+			return a > b;
+		}
+		return abs(a) > abs(b);
+	}
+};
+
 int main() {
 	cin.tie(0);
 	cin.sync_with_stdio(0);
 
-	priority_queue<int> negpq;
-	priority_queue<int, vector<int>, greater<int>> pospq;
+	priority_queue<int, vector<int>, cmp> pq;
 
 	int N;
 	cin >> N;
 
 	while (N--) {
 		int input;
-		int ret;
 		cin >> input;
 
 		if (!input) {
-			// pop
-			if (negpq.empty() || pospq.empty()) {
-				if (negpq.empty() && pospq.empty()) {
-					ret = 0;
-				}
-				else if (negpq.empty()) {
-					ret = pospq.top();	pospq.pop();
-				}
-				else {
-					ret = negpq.top();	negpq.pop();
-				}
+			if (pq.empty()) {
+				cout << 0 << '\n';
 			}
 			else {
-				if (abs(negpq.top()) > pospq.top()) {
-					ret = pospq.top();	pospq.pop();
-				}
-				else {
-					ret = negpq.top();	negpq.pop();
-				}
+				cout << pq.top() << '\n';
+				pq.pop();
 			}
-			cout << ret << '\n';
 		}
+
 		else {
-			if (input < 0) {
-				negpq.push(input);
-			}
-			else {
-				pospq.push(input);
-			}
+			pq.push(input);
 		}
 	}
 }
