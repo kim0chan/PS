@@ -3,24 +3,33 @@
 using namespace std;
 
 int N;
-int arr[6];
-int num[50];
-bool visited[50];
+int entry[3] = { 1, 2, 3 };
+bool solved = false;
+string ans = "                                                                                                  ";
+
+bool isValid(int l) {
+	for (int i = 1; i <= l / 2; i++) {
+		if (ans.substr(l - i, i) == ans.substr(l - 2 * i, i)) return false;
+	}
+	return true;
+}
 
 void solve(int k) {
-	if (k == 6) {
-		for (int i = 0; i < k; i++) {
-			cout << arr[i] << ' ';
+	if (solved) { return; }
+	if (k == N) {
+		for (int i = 0; i < N; i++) {
+			cout << ans[i];
 		}
 		cout << '\n';
+		solved = true;
+		return;
 	}
+
 	else {
-		for (int i = 0; i < N; i++) {
-			if (!visited[i] && (k == 0 || arr[k - 1] < num[i])) {
-				arr[k] = num[i];
-				visited[i] = true;
+		for (int i = 0; i < 3; i++) {
+			ans[k] = entry[i];
+			if (isValid(k + 1)) {
 				solve(k + 1);
-				visited[i] = false;
 			}
 		}
 	}
@@ -30,13 +39,7 @@ int main() {
 	cin.tie(0);
 	cin.sync_with_stdio(0);
 
-	do {
-		cin >> N;
+	cin >> N;
 
-		for (int i = 0; i < N; i++) {
-			cin >> num[i];
-		}
-
-		solve(0);
-	} while (N);
+	solve(N);
 }
