@@ -1,25 +1,23 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-int isPrime(int x) {
-	if (x == 1) { return 0; }
-	for (int i = 2; i * i <= x; i++) {
-		if (x % i == 0) { return 0; }
-	}
-	return 1;
-}
 
 int main() {
 	cin.tie(0);
 	cin.sync_with_stdio(0);
 
-	int M, N;
-	cin >> M >> N;
+	int N, M;
+	cin >> N >> M;
 
-	for (int i = M; i <= N; i++) {
-		if (isPrime(i)) {
-			cout << i << '\n';
+	vector<bool> sieve(M + 1, true);
+	sieve[1] = false;
+	for (int i = 2; i * i <= M; i++) {
+		if (!sieve[i]) continue;
+		for (int j = i * i; j <= M; j += i) {
+			sieve[j] = false;
 		}
+	}
+
+	for (int i = N; i <= M; i++) {
+		if (sieve[i]) cout << i << '\n';
 	}
 }

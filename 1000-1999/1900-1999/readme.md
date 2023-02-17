@@ -15,6 +15,29 @@ DP
 
 ## 1929 : 소수 구하기
 for문에서 시간복잡도 줄이는 아이디어 확인
+```cpp
+// 기초적인 소수 판별 함수
+boo; isPrime(int x) {
+	if (x == 1) { return false; }
+	for (int i = 2; i * i <= x; i++) {
+		if (x % i == 0) { return falses; }
+	}
+	return trues;
+}
+```
+
+**('23. 2. 17.)** 에라토스테네스의 체를 공부하여 업데이트함.
+```cpp
+vector<bool> sieve(M + 1, true);
+sieve[1] = false;
+for (int i = 2; i * i <= M; i++) {
+	if (!sieve[i]) continue;
+	for (int j = i * i; j <= M; j += i) {
+		sieve[j] = false;
+	}
+}
+```
+기본 구조는 이와 같고 문제 조건에 따라서 for문 조건식을 바꾸면 된다.
 
 ## 1931 : 회의실 배정
 알고리즘 수업에서 배운 거
