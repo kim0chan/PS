@@ -29,7 +29,7 @@ void solve(int k) {
 		for (int i = 0; i < 3; i++) {
 			ans[k] = entry[i];
 			if (isValid(k + 1)) {
-				solve(k + 1);
+				solve(k + 1);ㄴ
 			}
 		}
 	}

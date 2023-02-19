@@ -15,6 +15,29 @@ DP
 
 ## 1929 : 소수 구하기
 for문에서 시간복잡도 줄이는 아이디어 확인
+```cpp
+// 기초적인 소수 판별 함수
+boo; isPrime(int x) {
+	if (x == 1) { return false; }
+	for (int i = 2; i * i <= x; i++) {
+		if (x % i == 0) { return falses; }
+	}
+	return trues;
+}
+```
+
+**('23. 2. 17.)** 에라토스테네스의 체를 공부하여 업데이트함.
+```cpp
+vector<bool> sieve(M + 1, true);
+sieve[1] = false;
+for (int i = 2; i * i <= M; i++) {
+	if (!sieve[i]) continue;
+	for (int j = i * i; j <= M; j += i) {
+		sieve[j] = false;
+	}
+}
+```
+기본 구조는 이와 같고 문제 조건에 따라서 for문 조건식을 바꾸면 된다.
 
 ## 1931 : 회의실 배정
 알고리즘 수업에서 배운 거
@@ -23,8 +46,8 @@ for문에서 시간복잡도 줄이는 아이디어 확인
 아이디어가 중요하다.  
 서류 순위로 일단 정렬하고 나면 면접 순위가 밀리는 순간 탈락이니까  
 그런 식으로 구현하였다.
-pair<int, int>형 vector container을 정렬하는데,  
-v.rbegin(), v.rend()를 이용하고 back을 참조하며 pop_back을 했다.  
+`pair<int, int>`형 vector container을 정렬하는데,  
+`v.rbegin()`, `v.rend()`를 이용하고 `back`을 참조하며 `pop_back`을 했다.  
 prqueue를 쓸 수 있을 것 같다.
 
 ## 1956 : 운동
@@ -35,6 +58,12 @@ prqueue를 쓸 수 있을 것 같다.
 이렇게 하면 자기 자신으로 돌아오는 cycle의 cost 합도 구할 수가 있다.  
 관련 문제: [11404](https://www.acmicpc.net/problem/11404) 플로이드  
 근데 여기에는 적용이 안되는 것으로 보여 코드를 잘 살펴봐야 할 것 같다.
+
+## 1976 : 여행 가자
+플로이드 알고리즘 기반으로 풀었다.  
+근데 연결 여부만 확인하면 되어서 i>k, k>j가 연결되어 있다면 i>j도 연결시키는 식으로 구현했다.  
+`i==j`일 때 i>j를 연결시키는 코드 한 줄을 추가했는데 이걸 안하면 채점 80%에서 오답이 떠 버린다.  
+왜인지는 잘 모르겠다.
 
 ## 1978 : 소수 찾기
 
