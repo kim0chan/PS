@@ -1,6 +1,9 @@
 # 2800 ~ 2899
 
 
+## 2805 : 나무 자르기
+parametric search를 이용하여 풀었습니다.
+
 ## 2822 : 점수 계산
 간단한 구현 문제. `priority_queue`를 이용하여 `pair<int, int>`를 정렬하였음
 
