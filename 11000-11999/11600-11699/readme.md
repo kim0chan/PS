@@ -23,6 +23,10 @@ for (int i = 2; i * i <= N; i++) {
 if (N != 1) cout << N << '\n';
 ```
 
+## 11656 : 접미사 배열
+문자열 정렬 문제이다.  
+`string temp = input.substr(i);` 을 하면, `temp`는 `string input`의 `[i]`번째 문자부터 문자열 끝까지의 substring이 된다.
+
 ## 11659 : 구간 합 구하기 4
 
 ## 11660 : 구간 합 구하기 5
