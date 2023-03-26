@@ -1,80 +1,70 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-const int ELEM_MAX = 1000 + 1;
-
+vector<int> adj[1001];
+bool visited[1001];
 int N, M, V;
-bool visited[ELEM_MAX] = { false };
-vector<int> tree[ELEM_MAX];
-queue<int> q;
 
-void reset(bool* visited) {
-	for (int i = 1; i <= N; i++) {
-		visited[i] = 0;
-	}
-
-	return;
-}
-
-void depthTraversal(int nodeNum) {
-	visited[nodeNum] = true;
-
-	cout << nodeNum << ' ';
-	for (int i = 0; i < tree[nodeNum].size(); i++) {
-		int next = tree[nodeNum][i];
-
-		if (!visited[next]) {
-			depthTraversal(next);
+void DFS(int V) {
+	stack<int> st;
+	st.push(V);
+	
+	while (!st.empty()) {
+		int cur = st.top();	st.pop();
+		if (visited[cur])	continue;
+		visited[cur] = true;
+		cout << cur << ' ';
+		for (int i = 0; i < (int)adj[cur].size(); i++) {
+			int next = adj[cur][adj[cur].size() - 1 - i];
+			if (visited[next])	continue;
+			st.push(next);
 		}
 	}
+	cout << '\n';
 }
 
-void breadthTraversal(int nodeNum) {
-	int next;
+void DFS_R(int v) {
+	visited[v] = true;
+	cout << v << ' ';
+	for (auto next : adj[v]) {
+		if (visited[next])	continue;
+		DFS_R(next);
+	}
+}
 
-	q.push(nodeNum);
-	visited[nodeNum] = 1;
+void BFS(int V) {
+	queue<int> qu;
+	visited[V] = true;
+	qu.push(V);
 
-	while (!q.empty()) {
-		next = q.front();
-		q.pop();
-		cout << next << ' ';
-
-		for (int i = 0; i < tree[next].size(); i++) {
-			if (!visited[tree[next][i]]) {
-				q.push(tree[next][i]);
-				visited[tree[next][i]] = 1;
-			}
+	while (!qu.empty()) {
+		int cur = qu.front();	qu.pop();
+		cout << cur << ' ';
+		for (auto next : adj[cur]) {
+			if (visited[next])	continue;
+			visited[next] = true;
+			qu.push(next);
 		}
 	}
+	cout << '\n';
 }
 
 int main() {
-	cin.tie(NULL);
-	cin.sync_with_stdio(false);
+	cin.tie(0);
+	cin.sync_with_stdio(0);
 
 	cin >> N >> M >> V;
-
-	for (int i = 0; i < M; i++) {
-		int node1, node2;
-
-		cin >> node1 >> node2;
-		tree[node1].push_back(node2);
-		//fprintf(stdout, "[DEBUG] %d is pushed into vector %d\n", node2, node1);
-		tree[node2].push_back(node1);
-		//fprintf(stdout, "[DEBUG] %d is pushed into vector %d\n", node1, node2);
-		sort(tree[node1].begin(), tree[node1].end());
-		sort(tree[node2].begin(), tree[node2].end());
+	while (M--) {
+		int u, v;
+		cin >> u >> v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
 	}
 
-	depthTraversal(V);
-	reset(visited);
-	cout << '\n';
-	breadthTraversal(V);
+	for (int i = 1; i <= N; i++)	sort(adj[i].begin(), adj[i].end());
 
-	return 0;
+	DFS_R(V);
+	cout << '\n';
+	fill(visited + 1, visited + N + 1, false);
+	BFS(V);
 }
