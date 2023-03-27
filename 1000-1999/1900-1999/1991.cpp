@@ -1,77 +1,60 @@
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
-//A는 65.
-const int ELEM_MAX = 26;
 
 int N;
-bool visited[ELEM_MAX] = { false };
-int parent[ELEM_MAX];
-vector<int> tree[ELEM_MAX];
+int p[28];
+int lc[28];
+int rc[28];
 
-void preorderTraversal(int num) {
-	cout << (char)(num + 65);
-
-	for (int i = 0; i < tree[num].size(); i++) {
-		if (tree[num][i] >= 0) {
-			preorderTraversal(tree[num][i]);
-		}
-	}
-
-	return;
+void preOrderTraversal(int V) {
+	cout << char(V + 'A');
+	if (lc[V])	preOrderTraversal(lc[V]);
+	if (rc[V])	preOrderTraversal(rc[V]);
 }
 
-void inorderTraversal(int num) {
-	int cnt = tree[num].size();
-
-	if (cnt && tree[num][0] >= 0) {
-		inorderTraversal(tree[num][0]);
-	}
-
-	cout << (char)(num + 65);
-
-	if (cnt && tree[num][1] >= 0) {
-		inorderTraversal(tree[num][1]);
-	}
-	return;
+void inOrderTraversal(int V) {
+	if (lc[V])	inOrderTraversal(lc[V]);
+	cout << char(V + 'A');
+	if (rc[V])	inOrderTraversal(rc[V]);
 }
 
-void postorderTraversal(int num) {
-	for (int i = 0; i < tree[num].size(); i++) {
-		if (tree[num][i] >= 0) {
-			postorderTraversal(tree[num][i]);
-		}
-	}
-
-	cout << (char)(num + 65);
-
-	return;
+void postOrderTraversal(int V) {
+	if (lc[V])	postOrderTraversal(lc[V]);
+	if (rc[V])	postOrderTraversal(rc[V]);
+	cout << char(V + 'A');
 }
 
 int main() {
-	cin.tie(NULL);
-	cin.sync_with_stdio(false);
+	cin.tie(0);
+	cin.sync_with_stdio(0);
 
 	cin >> N;
-	
 	for (int i = 0; i < N; i++) {
-		char node1, node2, node3;
-		int n1, n2, n3;
-		cin >> node1 >> node2 >> node3;
-		n1 = node1 - 65;
-		n2 = node2 - 65;
-		n3 = node3 - 65;
-		tree[n1].push_back(n2);
-		tree[n1].push_back(n3);
+		char name, left, right;
+		cin >> name >> left >> right;
+
+		if (left != '.')	lc[name - 'A'] = left - 'A';
+		if (right != '.')	rc[name - 'A'] = right - 'A';
 	}
 
-	preorderTraversal(0);
+	/*
+	for (int i = 0; i < N; i++) {
+		cout << char(i + 'A') << ' ';
+	}
 	cout << '\n';
-	inorderTraversal(0);
+	for (int i = 0; i < N; i++) {
+		cout << lc[i] << ' ';
+	}
 	cout << '\n';
-	postorderTraversal(0);
+	for (int i = 0; i < N; i++) {
+		cout << rc[i] << ' ';
+	}
 	cout << '\n';
-
-	return 0;
+	*/
+	preOrderTraversal(0);
+	cout << '\n';
+	inOrderTraversal(0);
+	cout << '\n';
+	postOrderTraversal(0);
+	cout << '\n';
 }

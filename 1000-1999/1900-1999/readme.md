@@ -82,5 +82,7 @@ prqueue를 쓸 수 있을 것 같다.
 ## 1978 : 소수 찾기
 
 ## 1991 : 트리 순회
-preorder, inorder, postorder traversal
+preorder, inorder, postorder traversal  
+('23. 3. 27) 다시 풀었음.
+
 
