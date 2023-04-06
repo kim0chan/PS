@@ -9,6 +9,11 @@
 pair<int, int>
 다이나믹 프로그래밍(dynamic programming, dp)
 
+## 1005 : ACM Craft
+위상정렬 문제이다.  
+[2056 : 작업](https://boj.kr/2056) 문제와 거의 유사하다.  
+`priority_queue`를 이용하여 풀었다.
+
 ## 1008 : A/B
 10<sup>-9</sup> 이하의 오차 처리(lf)
 
