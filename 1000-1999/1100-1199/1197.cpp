@@ -21,10 +21,10 @@ int main(void) {
 	}
 
 	priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
-	chk[1] = true;
 	int cnt = 0;
 	int ans = 0;
 
+	chk[1] = true;
 	for (auto next : adj[1]) {
 		pq.push({ next.X, 1, next.Y });
 	}
@@ -33,7 +33,7 @@ int main(void) {
 		tie(c, a, b) = pq.top();	pq.pop();
 		if (chk[b])	continue;
 		ans += c;
-		chk[b] = 1;
+		chk[b] = true;
 		cnt++;
 
 		for (auto next : adj[b]) {
