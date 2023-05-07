@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "xiosbase": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "vector": "cpp"
     }
 }
