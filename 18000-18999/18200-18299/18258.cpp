@@ -1,58 +1,56 @@
-#include <iostream>
-#include <string>
-#include <queue>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main() {
-	int N, num;
+	cin.tie(0);
+	cin.sync_with_stdio(0);
+	queue<int> qu;
 	string input;
-	queue<int> qq;
-	cin.tie(NULL);
-	cin.sync_with_stdio(false);
+	int N;
 
 	cin >> N;
-
-	for (int i = 0; i < N; i++) {
+	while (N--) {
 		cin >> input;
-
 		if (input == "push") {
-			cin >> num;
-			qq.push(num);
+			int arg;
+			cin >> arg;
+			qu.push(arg);
 		}
 		else if (input == "pop") {
-			if (!qq.empty()) {
-				cout << qq.front() << '\n';
-				qq.pop();
+			if (qu.empty()) {
+				cout << -1 << '\n';
 			}
 			else {
-				cout << -1 << '\n';
+				cout << qu.front() << '\n';
+				qu.pop();
 			}
 		}
 		else if (input == "size") {
-			cout << qq.size() << '\n';
+			cout << qu.size() << '\n';
 		}
 		else if (input == "empty") {
-			cout << qq.empty() << '\n';
+			cout << qu.empty() << '\n';
 		}
 		else if (input == "front") {
-			if (!qq.empty()) {
-				cout << qq.front() << '\n';
+			if (qu.empty()) {
+				cout << -1 << '\n';
 			}
 			else {
-				cout << -1 << '\n';
+				cout << qu.front() << '\n';
 			}
 		}
 		else if (input == "back") {
-			if (!qq.empty()) {
-				cout << qq.back() << '\n';
-			}
-			else {
+			if (qu.empty()) {
 				cout << -1 << '\n';
 			}
+			else {
+				cout << qu.back() << '\n';
+			}
 		}
-		else { fprintf(stdout, "An error occurred.\n"); return -1; }
+		else {
+			cout << "error" << '\n';
+		}
 	}
-
 	return 0;
 }
