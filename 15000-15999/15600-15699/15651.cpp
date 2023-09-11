@@ -1,51 +1,28 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <cmath>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-class point {
-	public:
-		int x;
-		int y;
+int N, M;
+int ans[8];
 
-		point(int _x, int _y) {
-			x = _x;
-			y = _y;
+void Solve(int depth) {
+	if (depth == M) {
+		for (int i = 0; i < M; i++) {
+			cout << ans[i] << ' ';
 		}
-};
-
-bool compare(point &a, point &b) {
-	if (a.y < b.y) {
-		return true;
+		cout << '\n';
+		return;
 	}
 
-	else if (a.y == b.y) {
-		if (a.x < b.x) {
-			return true;
-		}
-		else return false;
+	for (int i = 1; i <= N; i++) {
+		ans[depth] = i;
+		Solve(depth + 1);
 	}
-	else return false;
 }
 
-int main() {
-	int N;
+int main(void) {
+	cin.sync_with_stdio(0);
+	cin.tie(0);
 
-	cin >> N;
-	int x, y = 0;
-
-	vector<point> v;
-	for (int i = 0; i < N; i++) {
-		cin >> x >> y;
-		v.push_back(point(x, y));
-	}
-
-	sort(v.begin(), v.end(), compare);
-	for (int i = 0; i < N; i++) {
-		cout << v[i].x << ' ' << v[i].y << '\n';
-	}
-
-	return 0;
+	cin >> N >> M;
+	Solve(0);
 }

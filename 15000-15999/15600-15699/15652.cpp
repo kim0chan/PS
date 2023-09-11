@@ -2,31 +2,28 @@
 using namespace std;
 
 int N, M;
-int arr[10];
-int visited[10];
+int ans[10];
 
-void solve(int cnt) {
-	if (cnt == M) {
+void Solve(int depth) {
+	if (depth == M) {
 		for (int i = 0; i < M; i++) {
-			cout << arr[i] << ' ';
+			cout << ans[i] << ' ';
 		}
 		cout << '\n';
 		return;
 	}
 
 	for (int i = 1; i <= N; i++) {
-		if (cnt == 0 or arr[cnt - 1] <= i) {
-			arr[cnt] = i;
-			solve(cnt + 1);
-		}
+		if (depth && ans[depth - 1] > i) continue;
+		ans[depth] = i;
+		Solve(depth + 1);
 	}
 }
 
-int main() {
-	cin.tie(0);
+int main(void) {
 	cin.sync_with_stdio(0);
-	
-	cin >> N >> M;
+	cin.tie(0);
 
-	solve(0);
+	cin >> N >> M;
+	Solve(0);
 }
