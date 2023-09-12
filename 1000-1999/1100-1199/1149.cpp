@@ -2,40 +2,29 @@
 using namespace std;
 
 int N;
-int cost[3][1001];
-int solve[3][1001];
+int R[1001];
+int G[1001];
+int B[1001];
+int min_cost[1001][3];
 
-int main() {
-	cin.tie(0);
+int main(void) {
 	cin.sync_with_stdio(0);
+	cin.tie(0);
 
 	cin >> N;
-	////// 0:R, 1:G, 2:B
-	for (int i = 1; i <= N; i++) {
-		for (int j = 0; j < 3; j++) {
-			cin >> cost[j][i];
-		}
+	for (int i = 0; i < N; i++) {
+		cin >> R[i] >> G[i] >> B[i];
 	}
 
-	solve[0][1] = cost[0][1];
-	solve[1][1] = cost[1][1];
-	solve[2][1] = cost[2][1];
+	min_cost[0][0] = R[0];
+	min_cost[0][1] = G[0];
+	min_cost[0][2] = B[0];
 
-	for (int i = 2; i <= N; i++) {
-		solve[0][i] = min(solve[1][i - 1], solve[2][i - 1]) + cost[0][i];
-		solve[1][i] = min(solve[2][i - 1], solve[0][i - 1]) + cost[1][i];
-		solve[2][i] = min(solve[0][i - 1], solve[1][i - 1]) + cost[2][i];
+	for (int i = 1; i < N; i++) {
+		min_cost[i][0] = min(min_cost[i - 1][1], min_cost[i - 1][2]) + R[i];
+		min_cost[i][1] = min(min_cost[i - 1][2], min_cost[i - 1][0]) + G[i];
+		min_cost[i][2] = min(min_cost[i - 1][0], min_cost[i - 1][1]) + B[i];
 	}
 
-	/*
-	cout << "[DEBUG]\n";
-	for (int i = 1; i <= N; i++) {
-		for (int j = 0; j < 3; j++) {
-			cout << solve[j][i] << ' ';
-		}
-		cout << '\n';
-	}
-	*/
-
-	cout << min(solve[0][N], min(solve[1][N], solve[2][N])) << '\n';
+	cout << min({ min_cost[N - 1][0], min_cost[N - 1][1], min_cost[N - 1][2] }) << '\n';
 }
