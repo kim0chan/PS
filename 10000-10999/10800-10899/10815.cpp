@@ -1,32 +1,25 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-int card[500004];
+int N, M;
 
-int main() {
-	cin.tie(0);
+int main(void) {
 	cin.sync_with_stdio(0);
+	cin.tie(0);
 
-	int N, M;
+	vector<int> cards;
 
 	cin >> N;
 	for (int i = 0; i < N; i++) {
-		cin >> card[i];
+		int input;
+		cin >> input;
+		cards.push_back(input);
 	}
-	sort(card, card + N);
-
+	sort(cards.begin(), cards.end());
 	cin >> M;
-	for (int i = 0; i < M; i++) {
-		int comp;
-		cin >> comp;
-
-		if (binary_search(card, card + N, comp)) {
-			cout << 1;
-		}
-		else {
-			cout << 0;
-		}
-		cout << ' ';
+	while (M--) {
+		int input;
+		cin >> input;
+		cout << binary_search(cards.begin(), cards.end(), input) << ' ';
 	}
 }

@@ -6,7 +6,33 @@
 한 줄로 된 간단한 에디터
 
 ## 1427 : 소트인사이드
-정렬
+정렬  
+계수 정렬(Counting Sort) 하면 메모리 효율 더 좋음
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int N;
+int cnt[11];
+
+int main(void) {
+	cin.sync_with_stdio(0);
+	cin.tie(0);
+
+	cin >> N;
+	while (N) {
+		cnt[N % 10]++;
+		N /= 10;
+	}
+
+	for (int i = 9; i >= 0; i--) {
+		for (int j = 0; j < cnt[i]; j++) {
+			cout << i;
+		}
+	}
+	cout << '\n';
+}
+```
 
 ## 1431 : 시리얼 번호
 `char`형의 숫자를 `int`형으로 바꿀 때는 `'0'`을 빼면 된다.  
