@@ -1,35 +1,30 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-int A[51];
-int B[51];
-int Astar[51];
+int N;
 
-int main() {
-	cin.tie(0);
+int main(void) {
 	cin.sync_with_stdio(0);
+	cin.tie(0);
 
-	int N;
-	int sum = 0;
+	int ans = 0;
+
 	cin >> N;
-
+	vector<int> A(N);
+	vector<int> B(N);
 	for (int i = 0; i < N; i++) {
 		cin >> A[i];
 	}
-
 	for (int i = 0; i < N; i++) {
 		cin >> B[i];
 	}
 
-	sort(A, A + N);
-	sort(B, B + N);
+	sort(A.begin(), A.end());
+	sort(B.begin(), B.end());
 
 	for (int i = 0; i < N; i++) {
-		//cout << "A[" << i << "] * B[" << N - 1 - i << "]\n";
-		//cout << A[i] << " * " << B[N - 1 - i] << "\n";
-		sum += A[i] * B[N - 1 - i];
+		ans += A[i] * B[N - (i + 1)];
 	}
 
-	cout << sum << '\n';
+	cout << ans << '\n';
 }

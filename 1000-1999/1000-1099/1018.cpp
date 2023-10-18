@@ -1,70 +1,61 @@
-#include <iostream>
-#include <algorithm>
-#include <math.h>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int getMin(int board[][51], int x, int y) {
-	int result1, result2, min;
-	int count = 0;
-	int com = 1;
+int N, M;
+vector<string> board;
+string WB[8] = {
+	"WBWBWBWB",
+	"BWBWBWBW",
+	"WBWBWBWB",
+	"BWBWBWBW",
+	"WBWBWBWB",
+	"BWBWBWBW",
+	"WBWBWBWB",
+	"BWBWBWBW"
+};
 
+string BW[8] = {
+	"BWBWBWBW",
+	"WBWBWBWB",
+	"BWBWBWBW",
+	"WBWBWBWB",
+	"BWBWBWBW",
+	"WBWBWBWB",
+	"BWBWBWBW",
+	"WBWBWBWB"
+};
+
+int getMinimumScore(int x, int y) {
+	int WB_score = 0;
+	int BW_score = 0;
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
-			if ((com != board[x + i][y + j])) { count++; }
-
-			if (com == 1) { com = 0; }
-			else { com = 1; }
+			WB_score += (WB[i][j] != board[x + i][y + j]);
+			BW_score += (BW[i][j] != board[x + i][y + j]);
 		}
-		if (com == 1) { com = 0; }
-		else { com = 1; }
 	}
 
-	result1 = count;
-	count = 0;
-	com = 0;
-
-	for (int i = 0; i < 8; i++) {
-		for (int j = 0; j < 8; j++) {
-			if ((com != board[x + i][y + j])) { count++; }
-
-			if (com == 1) { com = 0; }
-			else { com = 1; }
-		}
-		if (com == 1) { com = 0; }
-		else { com = 1; }
-	}
-
-	result2 = count;
-	min = (result1 < result2) ? result1 : result2;
-	return min;
+	return min(WB_score, BW_score);
 }
 
 int main(void) {
-	int N, M;
-	int board[51][51] = { 0, };
-	int min;
-	int com;
-	char input;
+	cin.sync_with_stdio(0);
+	cin.tie(0);
+
+	int answer = 0x7fffffff;
 
 	cin >> N >> M;
-
-	min = 2147483647;
 	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-			cin >> input;
-			if (input == 'W') { board[i][j] = 0; }
-			else if (input == 'B') { board[i][j] = 1; }
+		string input;
+		cin >> input;
+		board.push_back(input);
+	}
+
+	for (int i = 0; i < N - 7; i++) {
+		for (int j = 0; j < M - 7; j++) {
+			answer = min(answer, getMinimumScore(i, j));
 		}
 	}
 
-	for (int i = 0; i <= (N - 8); i++) {
-		for (int j = 0; j <= (M - 8); j++) {
-			com = getMin(board, i, j);
-			if (min > com) { min = com; }
-		}
-	}
-
-	cout << min;
-	return 0;
+	cout << answer << '\n';
 }
