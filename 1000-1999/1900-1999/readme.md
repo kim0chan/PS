@@ -5,6 +5,37 @@
 DP
 
 ## 1912 : 연속합
+('23. 10. 18.) 다시 풀엇어용
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+	cin.sync_with_stdio(0);
+	cin.tie(0);
+
+	int n;
+	cin >> n;
+	vector<int> arr(n);
+	vector<int> dp(n);
+
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+
+	dp[n - 1] = arr[n - 1];
+	for (int i = n - 2; i >= 0; i--) {
+		if(dp[i + 1] > 0) {
+			dp[i] = arr[i] + dp[i + 1];
+		}
+		else {
+			dp[i] = arr[i];
+		}
+	}
+
+	cout << *max_element(dp.begin(), dp.end()) << '\n';
+}
+```
 
 ## 1915 : 가장 큰 정사각형
 DP로 풀었다.  

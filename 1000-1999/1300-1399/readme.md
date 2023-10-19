@@ -2,6 +2,43 @@
 
 
 ## 1316 : 그룹 단어 체커
+('23. 10. 19.) 다시 풀었어요
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isGroupWord(string& word) {
+	bool check[26] = { 0, };
+	int length = (int)word.size();
+
+	int cur = word[0];
+	check[cur - 'a'] = true;
+	
+	for (int i = 1; i < length; i++) {
+		if (cur == word[i])	continue;
+		if (check[word[i] - 'a'])	return false;
+		cur = word[i];
+		check[cur - 'a'] = true;
+	}
+	return true;
+}
+
+int main(void) {
+	cin.sync_with_stdio(0);
+	cin.tie(0);
+
+	int ans = 0;
+	int N;
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		string input;
+		cin >> input;
+		if (isGroupWord(input))	ans++;
+	}
+
+	cout << ans << '\n';
+}
+```
 
 ## 1330 : 두 수 비교하기
 
@@ -14,7 +51,7 @@
 따라서 알파벳 별로 합을 해 둔 뒤에 `sort` 함 돌리고 9부터 곱해서 더해주면 된다.  
 근데 이 풀이가 바로 떠오르지 않아서 애좀 먹었다.
 
-## 1351 : 무한 수열
+## 1351 : 무한 수열 (★)
 재귀로 풀었는데 시간 제한이 떴다.  
 두 가지 접근이 필요했다.  
 1. 중복되는 subproblem이 있기 때문에 memoization이 필요하다.

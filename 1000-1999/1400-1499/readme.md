@@ -40,7 +40,29 @@ int main(void) {
 
 ## 1463 : 1로 만들기
 DFS로 풀긴 했는데 DP로 풀이할 수 있음.  
-힌트: `D[1] = 1`로 두고 역순으로 올라가기 ..
+힌트: `D[1] = 0`로 두고 역순으로 올라가기 ..
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(void) {
+	cin.sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	cin >> N;
+
+	vector<int> dp(N + 1);
+	for (int i = 2; i <= N; i++) {
+		dp[i] = dp[i - 1] + 1;
+		if (i % 2 == 0)	dp[i] = min(dp[i], dp[i / 2] + 1);
+		if (i % 3 == 0)	dp[i] = min(dp[i], dp[i / 3] + 1);
+	}
+
+	cout << dp[N] << '\n';
+}
+```
+DFS가 더 빠르긴 하네
 
 ## 1475 : 방 번호
 
