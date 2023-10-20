@@ -39,9 +39,8 @@
 덱(Deque) 기본기
 
 ## 10867 : 중복 빼고 정렬하기
-나는 벡터와 ```sort()```, ```binary_search()```를 이용하여 구현했는데,  
-```arr.erase(unique(v.begin(), v.end()), v.end())```와 같은 방식으로 구현할 수도 있을 것 같다.
-
+나는 벡터와 `sort()`, `binary_search()`를 이용하여 구현했는데,  
+`arr.erase(unique(v.begin(), v.end()), v.end())`와 같은 방식으로 구현할 수도 있을 것 같다.
 
 ## 10869 : 사칙연산
 

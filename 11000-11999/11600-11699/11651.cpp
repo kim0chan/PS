@@ -1,51 +1,22 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <cmath>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-class point {
-	public:
-		int x;
-		int y;
+int N;
 
-		point(int _x, int _y) {
-			x = _x;
-			y = _y;
-		}
-};
-
-bool compare(point &a, point &b) {
-	if (a.y < b.y) {
-		return true;
-	}
-
-	else if (a.y == b.y) {
-		if (a.x < b.x) {
-			return true;
-		}
-		else return false;
-	}
-	else return false;
-}
-
-int main() {
-	int N;
+int main(void) {
+	cin.sync_with_stdio(0);
+	cin.tie(0);
 
 	cin >> N;
-	int x, y = 0;
+	vector<pair<int, int>> v(N);
 
-	vector<point> v;
 	for (int i = 0; i < N; i++) {
-		cin >> x >> y;
-		v.push_back(point(x, y));
+		cin >> v[i].second >> v[i].first;
 	}
 
-	sort(v.begin(), v.end(), compare);
-	for (int i = 0; i < N; i++) {
-		cout << v[i].x << ' ' << v[i].y << '\n';
-	}
+	sort(v.begin(), v.end());
 
-	return 0;
+	for (auto e : v) {
+		cout << e.second << ' ' << e.first << '\n';
+	}
 }
