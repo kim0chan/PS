@@ -14,7 +14,7 @@ int main(void) {
 
 	for (int j = 1; j <= b_length; j++) {
 		if (a[0] == b[j - 1])	dp[1][j] = 1;
-		else						dp[1][j] = dp[1][j - 1];
+		else					dp[1][j] = dp[1][j - 1];
 	}
 
 	for (int i = 2; i <= a_length; i++) {
