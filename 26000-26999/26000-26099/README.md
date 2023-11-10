@@ -12,7 +12,7 @@ BFS 문제인데 삽질을 좀 했다. 사실 아직도 잘 모르겠다.
 
 이거 적다가 생각났는데 그냥 범위를 이렇게 하면 된다.  
 ```cpp
-void makeObstacle(int R, int C, int D) {
+void makeObstacle(int R, int C, int jhD) {
 	visited[R][C] = true;
 	for (int j = 0; j < D; j++) {
 		if (!(R + D - j < 1 || R + D - j > N || C + j < 1 || C + j > M))		visited[R + D - j][C + j] = true;
