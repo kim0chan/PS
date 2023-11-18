@@ -13,16 +13,16 @@ int Find(int x) {
 void Union(int x, int y) {
 	x = Find(x);
 	y = Find(y);
-
+​
 	if (x != y) {
 		if (node_rank[x] < node_rank[y])	parent[x] = y;
 		else if (node_rank[x] > node_rank[y]) parent[y] = x;
 		else {
 			parent[x] = y;
-			node_rank[x]++;
+			node_rank[y]++;
 		}
 	}
-}
+}​
 
 int main(void) {
 	cin.sync_with_stdio(0);
