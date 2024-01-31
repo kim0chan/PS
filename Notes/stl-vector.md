@@ -98,7 +98,7 @@ binary_search(v.begin(), v.end(), 값);
 찾으려는 값이 있으면 `true`, 없으면 `false`의 `bool` 값을 리턴한다.
 
 ## `max_element`와 `min_element` 관련
-max_element, min_element는 주소나 이터레이터를 반환함.​
+`max_element`, `min_element`는 주소나 이터레이터를 반환함.​
 
 ## `upper_bound`와 `lower_bound` 관련
 ### 💥 일단 정렬을 해야한다.
