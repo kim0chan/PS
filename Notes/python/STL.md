@@ -94,3 +94,16 @@ print(counter[1])  # 1 등장 횟수
 print(counter[2])  # 2 등장 횟수
 counter_to_dict = dict(counter)  # dict로 변환
 ```
+
+## `math`
+* 수학적인 기능을 제공하는 라이브러리
+```py
+import math
+
+math.factorial(5)
+math.sqrt(4)
+math.gcd(28, 21)
+math.pi
+math.e
+```
+
