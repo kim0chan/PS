@@ -41,6 +41,19 @@ for K, V in items:
     print(f'{K}: {V}')
 ```
 
+## 딕셔너리 정렬
+```py
+# `sorted()`를 이용하면 key 값을 기준으로 오름차순 정렬
+my_dict = {'cat': 123, 'dog': 456, 'meerkat': 789}
+print(sorted(my_dict, reverse=True))
+
+# value 값을 기준으로 정렬하여 '리스트'를 반환할 수 있다.
+print(sorted(my_dict.items(), key=lambda x:x[1]))
+
+# 다음과 같이 정렬된 딕셔너리를 생성할 수도 있다.
+sorted_dict = dict(sorted(my_dict.items()))
+```
+
 ## 모든 키-값 쌍 삭제
 ```
 my_dict.clear()
