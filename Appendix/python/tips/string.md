@@ -5,6 +5,8 @@
 
 ## Formatting
 
+## String Operations
+
 ## Useful Functions
 유용한 함수들
 ### `count`
