@@ -46,6 +46,13 @@ a.reverse()
 print(a)    # ['c', 'b', 'a']
 ```
 
+### `in`
+```py
+animals = ['dog', 'cat', 'cow']
+print('dog' in animals) # True
+```
+* 요소가 리스트에 있는지 여부를 반환
+
 ### `index`
 ```py
 a = [1, 2, 3]
