@@ -61,3 +61,7 @@ dictionary.get('name')  # 'kim'
     * `get`을 사용하면 `None`을 받게된다.
         * `get(elem, 'DEFAULT_VALUE')` 이렇게 인자로 Default 값을 설정할 수 있다.
 
+### `in`
+```py
+```
+

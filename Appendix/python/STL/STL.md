@@ -63,7 +63,7 @@ def heap_sort(iterable):
   heap = []
   result = []
 
-  for val in iterable:
+  for value in iterable:
     heapq.heappush(h, value)
 
   for i in range(len(heap)):
@@ -87,7 +87,7 @@ data.append(5)
 listed = list(data)  # list로 변환
 ```
 ```py
-from collection import Counter
+from collections import Counter
 
 counter = Counter([1, 1, 1, 2, 3, 2])
 print(counter[1])  # 1 등장 횟수
