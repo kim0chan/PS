@@ -1,4 +1,41 @@
 # 배열
+## 선언 및 생성
+```java
+int[] arr1 = new int[5];
+int arr2[] = new int[5];    // C-Style
+int[] arr3 = {1, 2, 3, 4, 5};   // 선언과 동시에 초기값 지정
+int[] arr4 = new int[]{1, 2, 3, 4, 5};  // `new` 키워드로 명시적 초기화
+```
+## 2차원 배열
+```java
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9},
+};
+
+int[][] matrix2 = new int[3][3];
+```
+## 배열 정렬 (`Arrays.sort()`)
+```java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 8, 1, 3};
+        Arrays.sort(arr);  // 오름차순 정렬
+        System.out.println(Arrays.toString(arr)); // 출력: [1, 2, 3, 5, 8]
+    }
+}
+```
+
+## 배열 복사 (`Arrays.copyOf()`)
+```java
+int[] original = {1, 2, 3};
+int[] copy = Arrays.copyOf(original, 5);  // 크기 5짜리 복사본 생성
+System.out.println(Arrays.toString(copy));  // 출력: [1, 2, 3, 0, 0]
+```
+
 # Collections
 ## List
 ### `ArrayList`
@@ -86,7 +123,224 @@ for (String item : list) {
 >   * 배열이 차 있는 개수를 반환함
 
 ## Deque
+* Double-Ended Queue
+  * 앞(`front`)과 뒤(`rear`)에서 삽입/삭제 가능
+  * `Queue`처럼 앞에서 빼거나(`pollFirst()`), `Stack`처럼 뒤에서 뺄 수도 있음(`pollLast()`)
+  * `Deque`는 `Queue`의 확장 인터페이스
+  * `ArrayDeque`, `LinkedList`는 `Deque`를 구현하는 클래스
+* 요소 삽입
+  * `addFirst(E e)`
+    * 앞에 요소 추가 (예외 발생 가능)
+  * `addLast(E e)`
+    * 뒤에 요소 추가 (예외 발생 가능)
+  * `offerFirst(E e)`
+    * 앞에 요소 추가 (`true` 반환, 실패 시 `false`)
+  * `offerLast(E e)`
+    * 뒤에 요소 추가 (`true` 반환, 실패 시 `false`)
+* 요소 제거
+  * `removeFirst()`
+    * 앞 요소 제거 (예외 발생 가능)
+  * `removeLast()`
+    * 뒤 요소 제거 (예외 발생 가능)
+  * `pollFirst()`
+    * 앞 요소 제거 (비어있으면 `null` 반환)
+  * `pollLast()`
+    * 뒤 요소 제거 (비어있으면 `null` 반환)
+* 요소 조회
+  * `getFirst()`
+    * 앞 요소 조회 (예외 발생 가능)
+  * `getLast()`
+    * 뒤 요소 조회 (예외 발생 가능)
+  * `peekFirst()`
+    * 앞 요소 조회 (비어있으면 `null` 반환)
+  * `peekLast()`
+    * 뒤 요소 조회 (비어있으면 `null` 반환)
+* `Deque`를 `Stack`처럼 사용 (LIFO)
+```java
+import java.util.Deque;
+import java.util.ArrayDeque;
+
+public class Main {
+    public static void main(String[] args) {
+        Deque<String> stack = new ArrayDeque<>();
+
+        // push() 대신 addLast() 사용 가능
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+
+        // pop()으로 마지막 요소 제거 (LIFO)
+        System.out.println(stack.pop()); // 출력: "C"
+        System.out.println(stack.pop()); // 출력: "B"
+    }
+}
+```
+* `Deque`를 `Queue`처럼 사용 (FIFO)
+```java
+import java.util.Deque;
+import java.util.ArrayDeque;
+
+public class Main {
+    public static void main(String[] args) {
+        Deque<String> queue = new ArrayDeque<>();
+
+        // offer() 대신 addLast() 사용 가능
+        queue.offer("A");
+        queue.offer("B");
+        queue.offer("C");
+
+        // poll()으로 첫 번째 요소 제거 (FIFO)
+        System.out.println(queue.poll()); // 출력: "A"
+        System.out.println(queue.poll()); // 출력: "B"
+    }
+}
+```
+
 ## Set
+`Set`은 중복을 허용하지 않는 컬렉션이다.  
+배열이나 리스트와 달리 중복된 값을 저장할 수 있어서, 유일한 값들이 필요한 경우 사용한다.
+### `HashSet`
+```java
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(10);  // 중복 값 추가 시 무시됨
+
+        System.out.println(set);  // 출력: [20, 10, 30] (순서 보장 X)
+    }
+}
+```
+* 💡 중복된 값은 저장되지 않는다.
+* 💡 삽입 순서를 보장하지 않으므로 주의한다.
+  * `LinkedHashSet`은 `HashSet`과 거의 같지만 입력한 순서를 유지한다.
+
+#### `HashSet` 주요 메서드
+```java
+set.add(40);         // 요소 추가
+set.remove(20);      // 특정 요소 제거
+set.contains(10);    // 특정 요소 포함 여부 확인 (true / false)
+set.size();          // Set의 크기 반환
+set.isEmpty();       // Set이 비어있는지 확인
+set.clear();         // 모든 요소 제거
+```
+
 ## Map
+Key-Value 쌍을 저장하는 자료구조
+### `HashMap`
+```java
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+
+        map.put("apple", 3);
+        map.put("banana", 5);
+        map.put("cherry", 2);
+
+        System.out.println(map.get("banana"));  // 출력: 5
+        System.out.println(map);  // 출력: {banana=5, cherry=2, apple=3} (순서 보장 X)
+    }
+}
+```
+* Key는 중복될 수 없지만, Value는 중복될 수 있다.
+* 순서는 보장되지 않는다.
+
+#### `HashMap` 주요 메서드
+```java
+map.put("orange", 7);  // 요소 추가
+map.remove("apple");    // 키를 이용해 요소 삭제
+map.containsKey("banana");  // 특정 키 포함 여부 확인 (true / false)
+map.containsValue(2);   // 특정 값 포함 여부 확인 (true / false)
+map.size();             // Map의 크기 반환
+map.isEmpty();          // 비어있는지 확인
+map.clear();            // 모든 요소 삭제
+```
+#### 반복문 순회
+```java
+for (String key : map.keySet()) {
+    System.out.println(key + " => " + map.get(key));
+}
+```
+* 💡 `keySet()`을 사용하면 모든 Key를 가져올 수 있다.
+
+### `LinkedHashMap`
+`HashMap` 과 기능은 동일하지만 입력한 순서를 유지한다.
 
 # String
+## 주요 메서드
+* 문자열 길이 확인
+```java
+String str = "Java Programming";
+System.out.println(str.length());  // 출력: 16
+```
+* 문자열 비교
+```java
+String s1 = "hello";
+String s2 = "hello";
+String s3 = new String("hello");
+
+System.out.println(s1.equals(s2));  // true (내용 비교)
+System.out.println(s1.equals(s3));  // true (내용 비교)
+System.out.println(s1 == s3);       // false (객체 비교)
+
+System.out.println("Java".equalsIgnoreCase("java"));  // true (대소문자 무시)
+```
+* 문자열 찾기 (`indexOf`, `contains`)
+```java
+String str = "Hello, Java!";
+System.out.println(str.indexOf("Java"));  // 출력: 7
+System.out.println(str.indexOf("Python")); // 출력: -1 (없으면 -1)
+System.out.println(str.contains("Java")); // true (포함 여부)
+```
+* 문자열 자르기 (`substring`)
+```java
+String str = "Hello, Java!";
+System.out.println(str.substring(7));    // 출력: Java!
+System.out.println(str.substring(7, 11)); // 출력: Java (끝 인덱스는 포함 안됨)
+```
+> 💡 `substring(start, end)` → `start`부터 `end-1`까지
+* 문자열 치환 (`replace`, `replaceAll`)
+```java
+String str = "Java is fun!";
+System.out.println(str.replace("Java", "Python")); // 출력: Python is fun!
+System.out.println(str.replaceAll("\\s", "-"));    // 출력: Java-is-fun! (모든 공백을 -로 변경)
+```
+* 💡 `replace()`는 단순 치환, `replaceAll()`은 정규식 사용 가능
+* 문자열 분리 (`split`)
+```java
+String str = "apple,banana,orange";
+String[] arr = str.split(",");
+
+for (String s : arr) {
+    System.out.println(s);
+}
+```
+* 문자열 공백 제거 (`trim`, `strip`)
+```java
+String str = "  Java  ";
+System.out.println("[" + str.trim() + "]");  // [Java] (양쪽 공백 제거)
+System.out.println("[" + str.strip() + "]"); // [Java] (Java 11부터 도입)
+```
+* 💡 `trim()`은 양쪽 공백 제거, `strip()`은 유니코드 공백도 처리 가능 (Java 11 이상)
+* 대소문자 변환 (`toUpperCase`, `toLowerCase`)
+```java
+String str = "Java";
+System.out.println(str.toUpperCase()); // JAVA
+System.out.println(str.toLowerCase()); // java
+```
+* 문자열 조합 (`concat`, `join`)
+```java
+String str1 = "Hello";
+String str2 = "Java";
+System.out.println(str1.concat(", ").concat(str2)); // Hello, Java
+
+String result = String.join("-", "apple", "banana", "cherry");
+System.out.println(result); // apple-banana-cherry
+```
