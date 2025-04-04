@@ -4,5 +4,6 @@
   "textFontFamily": "Pretendard",
   "enabledCssSnippets": [
     "my"
-  ]
+  ],
+  "showRibbon": false
 }

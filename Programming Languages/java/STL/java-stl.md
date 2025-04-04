@@ -34,7 +34,8 @@ int[] original = {1, 2, 3};
 int[] copy = Arrays.copyOf(original, 5);  // 크기 5짜리 복사본 생성  
 System.out.println(Arrays.toString(copy));  // 출력: [1, 2, 3, 0, 0]  
 ```  
-
+> ☝️ Wrapper Class는 Reference Type이라 기본 값이 `null`로 초기화되고,  
+> Primitive Type은 `false`, `0`등으로 초기화가 된다.
 # Collections
 ## List
 ### `ArrayList`
@@ -76,7 +77,6 @@ for (String item : list) {
   * 요소 포함 여부 확인
 * `sort(Comparator c)`
   * 정렬
-
 ### `LinkedList`
 * `LinkedList`는 이중 연결 리스트(Doubly Linked List)를 사용한다.
 * 각 노드는 값(value), 이전 노드(prev), 다음 노드(next)를 갖는다.
@@ -273,8 +273,14 @@ for (String key : map.keySet()) {
 
 ### `LinkedHashMap`
 `HashMap` 과 기능은 동일하지만 입력한 순서를 유지한다.
+#### (부록) Collection (`List`)의 정렬
+- `Collections.sort()`를 이용한다.
+```java
+List<Integer> list = Arrays.asList(1, 3, 5, 7, 9);
+Collections.sort(list);
+```
 
-# String
+# 🔺String
 ## 주요 메서드
 * 문자열 길이 확인
 ```java  
@@ -345,3 +351,78 @@ System.out.println(str1.concat(", ").concat(str2)); // Hello, Java
 String result = String.join("-", "apple", "banana", "cherry");  
 System.out.println(result); // apple-banana-cherry  
 ```
+# PriorityQueue
+- Java에서 `PriorityQueue`는 우선순위 큐를 구현하는 클래스
+- 기본적으로 **작은 값이 우선순위가 높음 (최소 힙)**
+- 최대 힙으로 만들려면 `Comparator`를 사용해야 한다.
+```java
+import java.util.PriorityQueue;
+
+public class Main {
+	public static void main(String[] args) {
+		PriorityQueue<Integer> pq = new PriorityQueue<>();  // 기본: 최소 힙
+		pq.add(5);
+		pq.add(1);
+		pq.add(3);
+		
+		System.out.println(pq.poll());  // 1
+		System.out.println(pq.poll());  // 3
+		System.out.println(pq.poll());  // 5
+	}
+}
+```
+- 자동 정렬됨 (오름차순 정렬)
+- `add()` / `offer()`: 요소 추가
+- `poll()`: 최우선순위 요소 제거 후 반환
+- `peek()`: 최우선순위 요소 확인 (제거 X)
+## 최대 힙 만들기 (내림차순)
+```java
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+maxHeap.add(5);
+maxHeap.add(1);
+maxHeap.add(3);
+
+System.out.println(maxHeap.poll());  // 5
+System.out.println(maxHeap.poll());  // 3
+System.out.println(maxHeap.poll());  // 1
+```
+- `Comparator`를 사용해서 내림차순 정렬
+- 큰 값이 먼저 나오도록 변경
+## 커스텀 객체 정렬 (Comparator 활용)
+```java
+class Job {
+	int id, priority;
+	
+	public Job(int id, int priority) {
+		this.id = id;
+		this.priority = priority;
+	}
+	
+	@Override
+	public String toString() {
+		return "Job{id=" + id + ", priority=" + priority + "}";
+	}
+}
+
+public class Main {
+	public static void main(string[] args) {
+		PriorityQueue<Job> jobQueue = new PriorityQueue<>(Comparator.comparingInt(j -> j.priority));
+		
+		jobQueue.add(new Job(1, 3));
+		jobQueue.add(new Job(2, 1));
+		jobQueue.add(new Job(3, 2));
+		
+		while (!jobQueue.isEmpty()) {
+			System.out.println(jobQueue.poll());
+		}
+	}
+}
+```
+
+| 메서드                       | 설명                 |
+| ------------------------- | ------------------ |
+| `add(E e)` / `offer(E e)` | 요소 추가              |
+| `poll()`                  | 최우선순위 요소 제거 후 반환   |
+| `peek()`                  | 최우선순위 요소 확인 (제거 X) |
+| `size()`                  | 현재 요소 개수 반환        |
+| `isEmpty()`               | 큐가 비었는지 확인         |
