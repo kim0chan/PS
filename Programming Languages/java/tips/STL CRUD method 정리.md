@@ -56,3 +56,23 @@
 | `pollLast()`      | 뒤 요소 제거하며 반환 |
 | `peekFirst()`     | 앞 요소 조회      |
 | `peekLast()`      | 뒤 요소 조회      |
+# `HashSet`
+### Create
+- `add(E e)`
+### Read
+- `contains(E e)`
+	- `boolean` 반환함.
+### ~~Update~~
+### Delete
+- `remove(E e)`
+- `clear()`
+# `HashMap`
+### Create
+- `put(K k, V v)`
+### Read
+- `containsKey(K k)`
+- `containsValue(V v)`
+### Update
+### Delete
+- `remove(K k)`
+- `clear()`

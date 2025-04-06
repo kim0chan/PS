@@ -165,12 +165,12 @@ public class Main {
     public static void main(String[] args) {
     Deque<String> stack = new ArrayDeque<>();
     
-	// push() 대신 addLast() 사용 가능  
+	// push() 대신 addFirst() 사용 가능  
 	stack.push("A");
 	stack.push("B");
 	stack.push("C");
     
-    // pop()으로 마지막 요소 제거 (LIFO)
+    // pop()으로 첫 번째 요소 제거 (LIFO)
     System.out.println(stack.pop()); // 출력: "C"  
 	System.out.println(stack.pop()); // 출력: "B"  
     }
