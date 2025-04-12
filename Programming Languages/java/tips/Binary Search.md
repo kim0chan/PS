@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 int[] arr = {1, 3, 5, 7, 9};
 Arrays.sort(arr);
+
 int index = Arrays.binarySearch(arr, 5);
 ```
 - 정열된 배열에서 이진 탐색 수행

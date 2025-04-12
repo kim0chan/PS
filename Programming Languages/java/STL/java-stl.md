@@ -26,7 +26,29 @@ public class Main {
     Arrays.sort(arr);  // 오름차순 정렬  
     System.out.println(Arrays.toString(arr)); // 출력: [1, 2, 3, 5, 8]  
 }}  
-```  
+```
+### 💡비교 함수 넘겨서 커스터마이징하기
+정렬할 때 비교 함수(Comparator)를 전달해 정렬 기준을 마음대로 설정할 수 있다.
+##### ✅ 기본 문법
+```java
+Arrays.sort(array, comparator);
+```
+##### 예시 (`String[]`) 내림차순 정렬
+```java
+String[] arr = {"aa", "e", "abc", "zzz"};
+
+Arrays.sort(arr, (a, b) -> b.compareTo(a));
+```
+##### ✅ 원하는 순서 만들기
+Comparator는 다음 구조를 따른다.
+```java
+(a, b) -> {
+	return 음수;  // a < b (a가 앞)
+	return 양수;  // a > b (b가 앞)
+	return 0;    // 같음
+}
+```
+
 
 ## 배열 복사 (`Arrays.copyOf()`)
 ```java  
@@ -256,6 +278,7 @@ public class Main {
 #### `HashMap` 주요 메서드
 ```java  
 map.put("orange", 7);  // 요소 추가  
+map.get("banana");     // 키를 이용해 요소 조회  
 map.remove("apple");    // 키를 이용해 요소 삭제  
 map.containsKey("banana");  // 특정 키 포함 여부 확인 (true / false)
 map.containsValue(2);   // 특정 값 포함 여부 확인 (true / false)
