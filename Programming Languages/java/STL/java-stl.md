@@ -374,6 +374,32 @@ System.out.println(str1.concat(", ").concat(str2)); // Hello, Java
 String result = String.join("-", "apple", "banana", "cherry");  
 System.out.println(result); // apple-banana-cherry  
 ```
+### 💡 문자를 붙여나가는 작업이 반복적일 경우
+-> `StringBuilder`를 사용하는 것이 효율적이다.
+```java
+String buildString(String[] words) {
+	StringBuilder sb = new StringBuilder();
+
+	for (String word : words) {
+		sb.append(word);
+	}
+
+	return sb.toString();
+}
+```
+만약 **한 글자만** 앞에만 붙여나간다면 `sb.insert(0, word)` 처럼 할 수 있지만, 이는 비효율적이므로 `reverse`를 이용하자.
+```java
+String buildReversedString(String[] words) {
+	StringBuilder sb = new StringBuilder();
+
+	for (String word : words) {
+		sb.append(word);
+	}
+
+	return sb.reverse().toString();
+}
+```
+순서를 다르게 할거면 words부터 뒤집으면 된다. (Array라면 index 순서를 꼬고, Collections라면 `Collections.reverse()`를 쓰자.)
 # PriorityQueue
 - Java에서 `PriorityQueue`는 우선순위 큐를 구현하는 클래스
 - 기본적으로 **작은 값이 우선순위가 높음 (최소 힙)**

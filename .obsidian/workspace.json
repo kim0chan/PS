@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Programming Languages/java/STL/java-stl.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.51103591918945
+    "width": 283.51103591918945,
+    "collapsed": true
   },
   "right": {
     "id": "58fb2a0f372fd56c",
