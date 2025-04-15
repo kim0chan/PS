@@ -99,6 +99,8 @@ for (String item : list) {
   * 요소 포함 여부 확인
 * `sort(Comparator c)`
   * 정렬
+* `addAll(Collection<? extends Object> c)`
+* `addAll(int index, Collection<? extends Object> c)`
 ### `LinkedList`
 * `LinkedList`는 이중 연결 리스트(Doubly Linked List)를 사용한다.
 * 각 노드는 값(value), 이전 노드(prev), 다음 노드(next)를 갖는다.

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "00750e444cb92069",
+        "id": "3185c6180be8de36",
         "type": "tabs",
         "children": [
           {
-            "id": "e25cfc3151646f80",
+            "id": "23b555611b99b91f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming Languages/java/STL/java-stl.md",
-                "mode": "source",
+                "file": "Programming Languages/java/tips/Sorting.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "java-stl"
+              "title": "Sorting"
             }
           }
         ]
@@ -143,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming Languages/java/tips/STL CRUD method 정리.md",
+                "file": "Programming Languages/java/tips/Sorting.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "STL CRUD method 정리 의 개요"
+              "title": "Outline of Sorting"
             }
           }
         ],
@@ -170,15 +170,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e25cfc3151646f80",
+  "active": "23b555611b99b91f",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Programming Languages/java/tips/size와 length의 차이.md",
+    "Programming Languages/java/tips/Integer List에서 remove할 때 조심할 것.md",
     "Programming Languages/java/STL/java-stl.md",
+    "Codes/1000-1999/1000-1099/readme.md",
+    "Programming Languages/java/tips/(백준) Input 받기.md",
+    "Programming Languages/java/tips/Adjacency List 만들기.md",
+    "0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9.md",
+    "Untitled.md",
     "Notes/algorithms/mathematics.md",
     "Programming Languages/java/tips/람다식 Lambda Expression.md",
     "Programming Languages/java/tips/STL CRUD method 정리.md",
     "Programming Languages/java/tips/Sorting.md",
-    "Programming Languages/java/tips/size와 length의 차이.md",
     "Programming Languages/java/tips/Binary Search.md",
     "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
     "Programming Languages/java/tips/메서드 내부에 함수 정의하기.md",
@@ -188,7 +193,6 @@
     "2025-04-04.md",
     "무제",
     "Programming Languages/java/tips",
-    "Codes/1000-1999/1000-1099/readme.md",
     "Programming Languages/python/data-structures/dictionary.md",
     "Programming Languages/cpp/tips/string.md",
     "Programming Languages/cpp",
