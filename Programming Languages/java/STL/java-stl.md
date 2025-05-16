@@ -426,6 +426,8 @@ public class Main {
 - `add()` / `offer()`: 요소 추가
 - `poll()`: 최우선순위 요소 제거 후 반환
 - `peek()`: 최우선순위 요소 확인 (제거 X)
+> [!warning] `PriorityQueue`의 순회
+> - `for-each` 문으로 `PriorityQueue` 내부의 원소를 순회할 수 있지만, 순서를 보장하지 않는다.
 ## 최대 힙 만들기 (내림차순)
 ```java
 PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);

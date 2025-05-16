@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming Languages/java/tips/Sorting.md",
+                "file": "Programming Languages/java/STL/java-stl.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sorting"
+              "title": "java-stl"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.51103591918945,
-    "collapsed": true
+    "width": 283.51103591918945
   },
   "right": {
     "id": "58fb2a0f372fd56c",
@@ -172,6 +171,7 @@
   },
   "active": "23b555611b99b91f",
   "lastOpenFiles": [
+    "Programming Languages/java/tips/Sorting.md",
     "Programming Languages/java/tips/size와 length의 차이.md",
     "Programming Languages/java/tips/Integer List에서 remove할 때 조심할 것.md",
     "Programming Languages/java/STL/java-stl.md",
@@ -183,7 +183,6 @@
     "Notes/algorithms/mathematics.md",
     "Programming Languages/java/tips/람다식 Lambda Expression.md",
     "Programming Languages/java/tips/STL CRUD method 정리.md",
-    "Programming Languages/java/tips/Sorting.md",
     "Programming Languages/java/tips/Binary Search.md",
     "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
     "Programming Languages/java/tips/메서드 내부에 함수 정의하기.md",
