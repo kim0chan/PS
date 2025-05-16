@@ -276,7 +276,6 @@ public class Main {
 ```  
 * Key는 중복될 수 없지만, Value는 중복될 수 있다.
 * 순서는 보장되지 않는다.
-
 #### `HashMap` 주요 메서드
 ```java  
 map.put("orange", 7);  // 요소 추가  
@@ -295,7 +294,18 @@ for (String key : map.keySet()) {
 }  
 ```  
 * 💡 `keySet()`을 사용하면 모든 Key를 가져올 수 있다.
-
+```java
+for (Integer num : map.values()) {
+	System.out.println(num);
+}
+```
+* 💡 `values()`을 사용하면 모든 Value를 가져올 수 있다.
+```java
+for (Map.Entry<String, Integer> entry : map.entrySet()) {  
+    System.out.println("key: " + entry.getKey() + ", value: " + entry.getValue());
+}
+```
+* 💡 `entrySet()`을 사용하면 전부 가져올 수 있다.
 ### `LinkedHashMap`
 `HashMap` 과 기능은 동일하지만 입력한 순서를 유지한다.
 #### (부록) Collection (`List`)의 정렬
