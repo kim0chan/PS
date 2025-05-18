@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/algorithms/binary-search.md",
+                "file": "Codes/Programmers/지게차와 크레인.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "binary-search"
+              "title": "지게차와 크레인"
             }
           }
         ]
@@ -171,11 +171,16 @@
   },
   "active": "23b555611b99b91f",
   "lastOpenFiles": [
+    "Codes/Programmers/비밀 코드 해독.md",
+    "Codes/Programmers/지게차와 크레인.md",
+    "Notes/algorithms/binary-search.md",
+    "Codes/Programmers",
+    "Codes/BOJ",
     "Programming Languages/java/STL/java-stl.md",
     "Programming Languages/java/tips/Sorting.md",
     "Programming Languages/java/tips/size와 length의 차이.md",
     "Programming Languages/java/tips/Integer List에서 remove할 때 조심할 것.md",
-    "Codes/1000-1999/1000-1099/readme.md",
+    "Codes/BOJ/1000-1999/1000-1099/readme.md",
     "Programming Languages/java/tips/(백준) Input 받기.md",
     "Programming Languages/java/tips/Adjacency List 만들기.md",
     "0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9.md",
@@ -186,7 +191,7 @@
     "Programming Languages/java/tips/Binary Search.md",
     "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
     "Programming Languages/java/tips/메서드 내부에 함수 정의하기.md",
-    "Codes/14000-14999/14500-14599/readme.md",
+    "Codes/BOJ/14000-14999/14500-14599/readme.md",
     "무제.md",
     "무제.canvas",
     "2025-04-04.md",
