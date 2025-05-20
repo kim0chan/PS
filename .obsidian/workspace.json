@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3185c6180be8de36",
+        "id": "10a5218375ec0964",
         "type": "tabs",
         "children": [
           {
-            "id": "23b555611b99b91f",
+            "id": "ad8c4c5a336c434f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Codes/Programmers/지게차와 크레인.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "지게차와 크레인"
+              "title": "New tab"
             }
           }
         ]
@@ -78,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.51103591918945
+    "width": 283.51103591918945,
+    "collapsed": true
   },
   "right": {
     "id": "58fb2a0f372fd56c",
@@ -169,14 +166,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "23b555611b99b91f",
+  "active": "ad8c4c5a336c434f",
   "lastOpenFiles": [
-    "Codes/Programmers/비밀 코드 해독.md",
+    "Programming Languages/java/tips/Min, Max.md",
+    "Codes/Programmers/124 나라의 숫자.md",
+    "Codes/Programmers/퍼즐 게임 챌린지.md",
     "Codes/Programmers/지게차와 크레인.md",
+    "Codes/Programmers/비밀 코드 해독.md",
+    "Codes/Programmers/마법의 엘리베이터.md",
     "Notes/algorithms/binary-search.md",
+    "Programming Languages/java/STL/java-stl.md",
+    "Programming Languages/java/tips/Binary Search.md",
     "Codes/Programmers",
     "Codes/BOJ",
-    "Programming Languages/java/STL/java-stl.md",
     "Programming Languages/java/tips/Sorting.md",
     "Programming Languages/java/tips/size와 length의 차이.md",
     "Programming Languages/java/tips/Integer List에서 remove할 때 조심할 것.md",
@@ -184,11 +186,9 @@
     "Programming Languages/java/tips/(백준) Input 받기.md",
     "Programming Languages/java/tips/Adjacency List 만들기.md",
     "0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9.md",
-    "Untitled.md",
     "Notes/algorithms/mathematics.md",
     "Programming Languages/java/tips/람다식 Lambda Expression.md",
     "Programming Languages/java/tips/STL CRUD method 정리.md",
-    "Programming Languages/java/tips/Binary Search.md",
     "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
     "Programming Languages/java/tips/메서드 내부에 함수 정의하기.md",
     "Codes/BOJ/14000-14999/14500-14599/readme.md",
@@ -200,8 +200,6 @@
     "Programming Languages/python/data-structures/dictionary.md",
     "Programming Languages/cpp/tips/string.md",
     "Programming Languages/cpp",
-    "Programming Languages/cpp/tips/reminder.md",
-    "Programming Languages/cpp/tips/memset-and-fill.md",
     "STL"
   ]
 }
