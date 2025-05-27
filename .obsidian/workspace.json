@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "10a5218375ec0964",
+        "id": "2c24c80f5a712358",
         "type": "tabs",
         "children": [
           {
-            "id": "ad8c4c5a336c434f",
+            "id": "15a9891b5b076389",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Programming Languages/java/tips/배열 빌딩 포인터.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "배열 빌딩 포인터"
             }
           }
         ]
@@ -74,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.51103591918945,
-    "collapsed": true
+    "width": 283.51103591918945
   },
   "right": {
     "id": "58fb2a0f372fd56c",
@@ -166,8 +169,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ad8c4c5a336c434f",
+  "active": "935cbbb1739f7940",
   "lastOpenFiles": [
+    "Codes/Programmers/k진수에서 소수 개수 구하기.md",
+    "Programming Languages/java/tips/배열 빌딩 포인터.md",
+    "Programming Languages/java/STL/java-stl.md",
+    "Codes/Programmers/멀쩡한 사각형.md",
+    "Notes/algorithms/base-conversion.md",
     "Programming Languages/java/tips/Min, Max.md",
     "Codes/Programmers/124 나라의 숫자.md",
     "Codes/Programmers/퍼즐 게임 챌린지.md",
@@ -175,7 +183,6 @@
     "Codes/Programmers/비밀 코드 해독.md",
     "Codes/Programmers/마법의 엘리베이터.md",
     "Notes/algorithms/binary-search.md",
-    "Programming Languages/java/STL/java-stl.md",
     "Programming Languages/java/tips/Binary Search.md",
     "Codes/Programmers",
     "Codes/BOJ",
@@ -192,13 +199,9 @@
     "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
     "Programming Languages/java/tips/메서드 내부에 함수 정의하기.md",
     "Codes/BOJ/14000-14999/14500-14599/readme.md",
-    "무제.md",
     "무제.canvas",
-    "2025-04-04.md",
     "무제",
     "Programming Languages/java/tips",
-    "Programming Languages/python/data-structures/dictionary.md",
-    "Programming Languages/cpp/tips/string.md",
     "Programming Languages/cpp",
     "STL"
   ]
