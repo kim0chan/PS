@@ -54,6 +54,7 @@ Comparator는 다음 구조를 따른다.
 ```java  
 int[] original = {1, 2, 3};  
 int[] copy = Arrays.copyOf(original, 5);  // 크기 5짜리 복사본 생성  
+int[] copy = Arrays.copyOfRange(original, 1, 3);  // 인덱스 1부터 2까지 복사됨
 System.out.println(Arrays.toString(copy));  // 출력: [1, 2, 3, 0, 0]  
 ```  
 > ☝️ Wrapper Class는 Reference Type이라 기본 값이 `null`로 초기화되고,  
