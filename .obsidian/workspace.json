@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming Languages/java/STL/java-stl.md",
+                "file": "Notes/algorithms/subset-brute-force.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "java-stl"
+              "title": "subset-brute-force"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "자주 쓰이는 형변환 정리"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,9 +183,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "935cbbb1739f7940",
+  "active": "15a9891b5b076389",
   "lastOpenFiles": [
     "Programming Languages/java/STL/java-stl.md",
+    "Notes/algorithms/subset-brute-force.md",
     "Programming Languages/java/tips/자주 쓰이는 형변환 정리.md",
     "Programming Languages/java/tips/배열 빌딩 포인터.md",
     "Codes/Programmers/k진수에서 소수 개수 구하기.md",
@@ -213,7 +213,6 @@
     "Programming Languages/java/tips/람다식 Lambda Expression.md",
     "Programming Languages/java/tips/STL CRUD method 정리.md",
     "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
-    "Programming Languages/java/tips/메서드 내부에 함수 정의하기.md",
     "무제.canvas",
     "무제",
     "Programming Languages/java/tips",
