@@ -255,7 +255,13 @@ set.size();          // Set의 크기 반환
 set.isEmpty();       // Set이 비어있는지 확인  
 set.clear();         // 모든 요소 제거  
 ```  
+### Tip
+- `HashSet` 초기화 시 List를 넘겨서 바로 중복을 제거할 수 있다.
+```java
+String[] names;
 
+Set<String> nameSet = new HashSet<>(Arrays.asList(names));
+```
 ## Map
 Key-Value 쌍을 저장하는 자료구조
 ### `HashMap`
