@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/algorithms/subset-brute-force.md",
-                "mode": "source",
+                "file": "Notes/mathematics/ceiling-and-rounding-using-integer-division.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "subset-brute-force"
+              "title": "ceiling-and-rounding-using-integer-division"
             }
           },
           {
@@ -49,8 +49,7 @@
               "title": "자주 쓰이는 형변환 정리"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,10 +197,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3eff81d5e0a04f83",
+  "active": "15a9891b5b076389",
   "lastOpenFiles": [
-    "Notes/algorithms/subset-brute-force.md",
     "Programming Languages/java/STL/java-stl.md",
+    "Notes/mathematics/ceiling-and-rounding-using-integer-division.md",
+    "Notes/mathematics/basics.md",
+    "Notes/mathematics",
+    "Notes/algorithms/subset-brute-force.md",
     "Programming Languages/java/tips/자주 쓰이는 형변환 정리.md",
     "Programming Languages/java/tips/배열 빌딩 포인터.md",
     "Codes/Programmers/k진수에서 소수 개수 구하기.md",
@@ -224,10 +226,8 @@
     "Programming Languages/java/tips/(백준) Input 받기.md",
     "Programming Languages/java/tips/Adjacency List 만들기.md",
     "0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9.md",
-    "Notes/algorithms/mathematics.md",
     "Programming Languages/java/tips/람다식 Lambda Expression.md",
     "Programming Languages/java/tips/STL CRUD method 정리.md",
-    "Programming Languages/java/tips/메서드 내부에 Class 선언하기.md",
     "무제.canvas",
     "무제",
     "Programming Languages/java/tips",
