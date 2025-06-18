@@ -313,6 +313,43 @@ for (Map.Entry<String, Integer> entry : map.entrySet()) {
 }
 ```
 * 💡 `entrySet()`을 사용하면 전부 가져올 수 있다.
+#### `HashMap` 선언과 동시에 초기화하기
+##### 1. Java 9 이상 - `Map.of()` 사용 (불변 Map)
+```java
+Map<String, String> map = Map.of(
+	"key1", "value1",
+	"key2", "value2"
+);
+```
+- 💥 이 방식은 **불변 Map을 생성**하므로 이후에 `put()` 등으로 값을 변경하려고 하면 예외가 발생한다.
+##### 2. Java 8 이하 - 익명 클래스 활용 (mutable)
+```java
+Map<String, String> map = new HasnMap<String, String>() {{
+	put("key1", "value1");
+	put("key2", "value2");	
+}};
+```
+- ⚠️ 권장되지 않는다. 익명 내부 클래스를 사용하면 불필요한 클래스가 생성되고 메모리 누수나 직렬화 문제가 발생할 수 있다.
+##### 3. 정적 메서드를 이용한 초기화
+```java
+public static Map<String, String> createMap() {
+	Map<String, String> map = new HashMap<>();
+	map.put("key1", "value1");
+	map.put("key2", "value2");
+	return map;
+}
+
+// 사용
+Map<String, String> map = createMap();
+```
+##### 4. Stream과 Collectors 이용 (Java 8 이상)
+```java
+Map<String, String> map = Stream.of(
+	new String[]{"key1", "value1"},
+	new String[]{"key2", "value2"}
+).collect(Collectors.toMap(data -> data[0], data-> data[1]));
+```
+
 ### `LinkedHashMap`
 `HashMap` 과 기능은 동일하지만 입력한 순서를 유지한다.
 #### (부록) Collection (`List`)의 정렬
