@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Codes/Programmers/광물 캐기.md",
+                "file": "Codes/Programmers/가장 큰 정사각형 찾기.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "광물 캐기"
+              "title": "가장 큰 정사각형 찾기"
             }
           },
           {
@@ -199,11 +199,14 @@
   },
   "active": "15a9891b5b076389",
   "lastOpenFiles": [
-    "Codes/Programmers/124 나라의 숫자.md",
+    "Codes/Programmers/유연근무제.md",
+    "Codes/Programmers/가장 큰 정사각형 찾기.md",
+    "Codes/Programmers/비밀 코드 해독.md",
     "Codes/Programmers/광물 캐기.md",
+    "Programming Languages/java/STL/java-stl.md",
+    "Codes/Programmers/124 나라의 숫자.md",
     "Notes/mathematics/ceiling-and-rounding-using-integer-division.md",
     "Programming Languages/java/tips/자주 쓰이는 형변환 정리.md",
-    "Programming Languages/java/STL/java-stl.md",
     "Notes/mathematics/basics.md",
     "Notes/mathematics",
     "Notes/algorithms/subset-brute-force.md",
@@ -214,7 +217,6 @@
     "Programming Languages/java/tips/Min, Max.md",
     "Codes/Programmers/퍼즐 게임 챌린지.md",
     "Codes/Programmers/지게차와 크레인.md",
-    "Codes/Programmers/비밀 코드 해독.md",
     "Codes/Programmers/마법의 엘리베이터.md",
     "Notes/algorithms/binary-search.md",
     "Programming Languages/java/tips/Binary Search.md",
@@ -226,8 +228,6 @@
     "Codes/BOJ/1000-1999/1000-1099/readme.md",
     "Programming Languages/java/tips/(백준) Input 받기.md",
     "Programming Languages/java/tips/Adjacency List 만들기.md",
-    "0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9.md",
-    "Programming Languages/java/tips/람다식 Lambda Expression.md",
     "무제.canvas",
     "무제",
     "Programming Languages/java/tips",
