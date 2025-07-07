@@ -12,7 +12,7 @@ bool binarySearch(int target) {  // 💥 탐색 대상이 되는 배열이 이�
 	while (st <= en) {
 		int mid = (st + en + 1) / 2;
 ​
-		if (A[mid] < target)	   st = mid + 1;
+		if (A[mid] < target)	     st = mid + 1;
 		else if (A[mid] > target)  en = mid - 1;
 		else return true;  // 탐색 성공! 이럼 target과 같은 값을 찾은거니까
 	}
@@ -76,10 +76,9 @@ int index = lower_bound(v.begin(), v.end(), num) - v.begin();
 ```java
 int left = 1;         // 최소값
 int right = 100_000;  // 최대값
-int answer = right;
 
 while (left <= right) {
-  int mid = left + (right - left) / 2;
+  int mid = (left + right) / 2;
   if (mid < target)       left  = mid + 1;
   else if (mid > target)  right = mid - 1;
   else return true;
@@ -91,13 +90,12 @@ return false;
 // Parametric Search
 class Solution {
     public int solution() {
-        int n = diffs.length;
         int st = 1;        // 최소값
         int en = 100_000;  // 최대값
         int answer = en;
         
         while (st <= en) {
-            int mid = st + (en - st - 1) / 2;
+            int mid = (st + en - 1) / 2;
             if (isClearable()) {
                 answer = mid;
                 en = mid - 1;
