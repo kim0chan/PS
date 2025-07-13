@@ -138,3 +138,40 @@ class Solution {
 
 즉, 둘 다 convergence는 되지만,  
 탐색 구간을 어떻게 업데이트하느냐에 따라 어느 mid 계산법이 더 안전하고 직관적인지가 달라진다.
+## Java Lower / Upper Bound
+#### 1. `lowerBound` (첫 번째로 해당 값 이상이 나오는 위치)
+```java
+public static int lowerBound(int[] arr, int target) {
+	int left = 0, right = arr.length;
+	int answer = arr.length;  // 못 찾을 경우 끝 위치
+	while (left <= right) {
+		int mid = (left + right) / 2;
+		if (arr[mid] >= target) {
+			answer = mid;
+			right = mid - 1;
+		} else {
+			left = mid + 1;
+		}
+	}
+	
+	return answer;
+}
+```
+#### 2. `upperBound` (첫 번째로 해당 값 초과가 나오는 위치)
+```java
+public static int upperBound(int[] arr, int target) {
+	int left = 0; right = arr.length - 1;
+	int answer = arr.length;  // 못 찾을 경우 끝 위치
+	while (left <= right) {
+		int mid = (left + right) / 2;
+		if (arr[mid] > target) {
+			answer = mid;
+			right = mid - 1;
+		} else {
+			left = mid + 1;
+		}
+	}
+	
+	return answer;
+}
+```
